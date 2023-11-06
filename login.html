@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="navBar">
+    <div class="navBar_container">
+      <a href="#" id="navbar_title">Degree Progress Report</a>
+    </div>
+  </div>
+
+
+    <table class="info-table">
+      <tr>
+        <th>Student Name</th>
+        <td>Michael Jackson</td>
+        <th>Student Number</th>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Degree Sought</th>
+        <td>BSC</td>
+        <th>Faculty</th>
+        <td>Lassonde School of Engineering</td>
+      </tr>
+      <tr>
+        <th>Degree Subject(s)</th>
+        <td>Computer Science</td>
+        <th>Transfer Credits</th>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>Program Campus</th>
+        <td>Keele</td>
+        <th>Date Run</th>
+        <td id="date-run"></td>
+      </tr>
+    </table>
+
+
+    <script>
+      // Function to format date and time
+      function formatDate(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        let strTime = hours + ':' + minutes + ' ' + ampm;
+        return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + " " + strTime;
+      }
+    
+      // Set the current date and time
+      document.getElementById('date-run').textContent = formatDate(new Date());
+    </script>
+
+    <body>
+
+      <div class="course_progress">
+        <section class="progress_section">
+          <div id="total_completed" class="progress_info">Total Completed: 15</div>
+          <div id="total_remaining" class="progress_info">Total Remaining: 0</div>
+          <div id="degree_completion" class="progress_info">Degree Completion: 100%</div>
+        </section>
+      </div>
+
+      <style>
+        .status-completed {
+          color: green;
+        }
+
+        .status-inprogress {
+          color: orange;
+        }
+
+        .status-notstarted {
+          color: red;
+        }
+
+        h2 {
+          text-align: center;
+          margin-top: 0px;
+        }
+      </style>
+      </head>
+
+      <body>
+
+        <h2>Computer Science Course Grades</h2>
+
+        <table class="grade-table">
+          <tr>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Status</th>
+            <th>Course Title</th>
+          </tr>
+          <!-- Sample Data Rows -->
+          <tr>
+            <td>EECS 1022</td>
+            <td>A-</td>
+            <td class="status-completed">Completed</td>
+            <td>Intro to Object-Oriented Programming</td>
+          </tr>
+          <tr>
+            <td>EECS 1012</td>
+            <td>-</td>
+            <td class="status-inprogress">In Progress</td>
+            <td>Advanced JavaScript Programming</td>
+          </tr>
+          <!-- ... other rows ... -->
+          <tr>
+            <td>EECS 1015</td>
+            <td>-</td>
+            <td class="status-notstarted">Not Started</td>
+            <td>Intro. to Computer Science & Programming</td>
+          </tr>
+          <!-- ... other rows ... -->
+          <tr>
+            <td>EECS 2030</td>
+            <td>B+</td>
+            <td class="status-completed">Completed</td>
+            <td>Software Engineering</td>
+          </tr>
+          <tr>
+            <td>EECS 2011</td>
+            <td>A</td>
+            <td class="status-completed">Completed</td>
+            <td>Data Structures and Algorithms</td>
+          </tr>
+          <tr>
+            <td>EECS 2021</td>
+            <td>-</td>
+            <td class="status-inprogress">In Progress</td>
+            <td>Computer Organization</td>
+          </tr>
+          <tr>
+            <td>EECS 3000</td>
+            <td>-</td>
+            <td class="status-notstarted">Not Started</td>
+            <td>Operating Systems</td>
+          </tr>
+          <tr>
+            <td>EECS 3101</td>
+            <td>B+</td>
+            <td class="status-completed">Completed</td>
+            <td>Design and Analysis of Algorithms</td>
+          </tr>
+          <tr>
+            <td>EECS 3221</td>
+            <td>-</td>
+            <td class="status-inprogress">In Progress</td>
+            <td>Systems Programming</td>
+          </tr>
+          <tr>
+            <td>EECS 3401</td>
+            <td>-</td>
+            <td class="status-notstarted">Not Started</td>
+            <td>Artificial Intelligence</td>
+          </tr>
+
+
+        </table>
+
+      </body>
+
+</html>
+
+<div class="title_gradelist">
+  <div class="list_course_info">Please note that failed courses will not be applied to degree requirements.</div>
+</div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
